@@ -36,6 +36,29 @@ namespace Demo__NET_CYBER_ASP.Data
         }
 
 
+        public Game? GetById(int id)
+        {
+
+            return _gameList.FirstOrDefault(g => g.Id == id);
+        }
+
+
+        public void Edit(Game game)
+        {
+            Game gameToUpdate = GetById(game.Id);
+
+            if(gameToUpdate is not null) 
+            {
+                gameToUpdate.Title = game.Title;
+                gameToUpdate.Release = game.Release;
+                gameToUpdate.Category = game.Category;
+                gameToUpdate.Description = game.Description;
+            }
+
+
+        }
+
+
 
     }
 }

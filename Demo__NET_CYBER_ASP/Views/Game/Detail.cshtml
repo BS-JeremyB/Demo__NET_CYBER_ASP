@@ -1,0 +1,8 @@
+﻿@model Game
+
+
+<h3>@Model.Title</h3>
+<p>Genre : @Model.Category</p>
+<p>Description : @Model.Description</p>
+<p>Release : @Model.Release</p>
+<a class="btn btn-warning" asp-controller="Game" asp-action="Edit" asp-route-id="@Model.Id">Edit</a><a class="btn btn-danger" asp-controller="Game" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>

@@ -5,7 +5,12 @@
 
     @foreach(Game game in Model)
     {
-        <p>
+        
             <h3>@game.Title</h3>
-        </p>
+            <p>Genre : @game.Category</p>
+            <p>Description : @game.Description</p>
+            <p>Release : @game.Release</p>
+            <a class="btn btn-primary" asp-controller="Game" asp-action="Detail" asp-route-id="@game.Id">Detail</a>
+
+        <hr />
     }
