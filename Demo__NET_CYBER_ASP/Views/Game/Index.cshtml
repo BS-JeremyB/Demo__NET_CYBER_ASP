@@ -1,0 +1,11 @@
+﻿@model List<Game>;
+
+<h1>@ViewBag.Titre</h1>
+
+
+    @foreach(Game game in Model)
+    {
+        <p>
+            <h3>@game.Title</h3>
+        </p>
+    }
