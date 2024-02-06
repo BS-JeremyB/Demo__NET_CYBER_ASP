@@ -52,5 +52,30 @@ namespace Demo__NET_CYBER_ASP.Controllers
             _data.Edit(game);
             return RedirectToAction("Index");
         }
+
+
+        // Create action
+
+        public IActionResult Create()
+        {
+            Game game = new Game();
+            return View(game);
+
+        }
+
+        [HttpPost]
+        public IActionResult Create(Game game)
+        {
+            _data.Add(game);
+            return RedirectToAction("Detail", new { game.Id });
+        }
+
+        // Delete action
+
+        public IActionResult Delete(int id)
+        {
+            _data.Delete(id);
+            return RedirectToAction("Index");
+        }
     }
 }

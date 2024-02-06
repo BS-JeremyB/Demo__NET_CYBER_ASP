@@ -6,6 +6,7 @@ namespace Demo__NET_CYBER_ASP.Data
     {
         private static GameData _instance;
         private List<Game> _gameList;
+        private static int GameId = 3;
 
 
         public GameData()
@@ -58,7 +59,16 @@ namespace Demo__NET_CYBER_ASP.Data
 
         }
 
+        public void Add(Game game)
+        {
+            game.Id = GameId++;
+            _gameList.Add(game);
+        }
 
 
+        public void Delete(int id)
+        {
+            _gameList.Remove(GetById(id));
+        }
     }
 }
